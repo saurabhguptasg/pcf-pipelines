@@ -81,18 +81,21 @@ resources:
 
 - name: ginkgo
   type: git
+  check_every: 168h # 1 week
   source:
     uri: https://github.com/onsi/ginkgo
     branch: master
 
 - name: gomega
   type: git
+  check_every: 168h
   source:
     uri: https://github.com/onsi/gomega
     branch: master
 
 - name: yaml
   type: git
+  check_every: 168h
   source:
     uri: https://gopkg.in/yaml.v2
     branch: master
