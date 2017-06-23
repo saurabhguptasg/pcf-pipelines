@@ -45,10 +45,6 @@ declare -a arr=(
 "db_nfsvolumedb_username"
 "db_nfsvolumedb_password"
 "gcloud_sql_instance_ip"
-"pcf_ert_domain"
-"terraform_prefix"
-"gcp_storage_access_key"
-"gcp_storage_secret_key"
 )
 
 echo "finding variables to replace in your json config file using the value from the env variable of the same name"
