@@ -45,6 +45,8 @@ declare -a arr=(
 "db_nfsvolumedb_username"
 "db_nfsvolumedb_password"
 "gcloud_sql_instance_ip"
+"pcf_ert_domain"
+"terraform_prefix"
 )
 
 echo "finding variables to replace in your json config file using the value from the env variable of the same name"
@@ -63,3 +65,10 @@ done
 
 perl -pi -e "s|{{gcp_storage_access_key}}|${gcp_storage_access_key}|g" ${json_file}
 perl -pi -e "s|{{gcp_storage_secret_key}}|${gcp_storage_secret_key}|g" ${json_file}
+
+#############################################################
+# Set SSL Cert and Key for PCF                              #
+#############################################################
+
+perl -pi -e "s|{{pcf_ert_ssl_cert}}|${pcf_ert_ssl_cert}|g" ${json_file}
+perl -pi -e "s|{{pcf_ert_ssl_key}}|${pcf_ert_ssl_key}|g" ${json_file}
