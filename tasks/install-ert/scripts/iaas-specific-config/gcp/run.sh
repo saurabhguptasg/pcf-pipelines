@@ -66,9 +66,3 @@ done
 perl -pi -e "s|{{gcp_storage_access_key}}|${gcp_storage_access_key}|g" ${json_file}
 perl -pi -e "s|{{gcp_storage_secret_key}}|${gcp_storage_secret_key}|g" ${json_file}
 
-#############################################################
-# Set SSL Cert and Key for PCF                              #
-#############################################################
-
-perl -pi -e "s|{{pcf_ert_ssl_cert}}|${pcf_ert_ssl_cert}|g" ${json_file}
-perl -pi -e "s|{{pcf_ert_ssl_key}}|${pcf_ert_ssl_key}|g" ${json_file}
