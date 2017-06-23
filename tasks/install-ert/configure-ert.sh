@@ -54,6 +54,11 @@ perl -pi -e "s/{{pcf_az_3}}/${pcf_az_3}/g" ${json_file}
 perl -pi -e "s/{{terraform_prefix}}/${terraform_prefix}/g" ${json_file}
 
 echo "================================================================================"
+echo "Json File is:"
+cat ${json_file}
+echo "================================================================================"
+
+echo "================================================================================"
 echo "Generating Self Signed Certs for signing SAML authn requests: ${pcf_ert_domain}"
 echo "================================================================================"
 
@@ -159,6 +164,7 @@ echo "Setting Properties for: ${guid_cf}"
 echo "=============================================================================================="
 
 json_properties=$(cat ${json_file} | jq -c .properties)
+echo "Json properties are: " $json_properties
 fn_om_linux_curl "PUT" "/api/v0/staged/products/${guid_cf}/properties" "$json_properties"
 
 # Set Resource Configs
